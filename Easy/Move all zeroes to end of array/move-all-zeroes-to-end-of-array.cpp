@@ -8,23 +8,20 @@ class Solution{
 public:
 	void pushZerosToEnd(int arr[], int n) {
 	    // code here
-	    vector<int> ans;
-	    int c=0,j=0;
-	    for(int i=0;i<n;i++){
-	        if(arr[i]!=0){
-	            ans.push_back(arr[i]);
-	            c++;
-	        }else{
-	            j++;
+	    int k=0;
+	    while(k<n){
+	        if(arr[k]==0){break;}
+	        else{
+	            k=k+1;
 	        }
 	    }
-	    for(int i=0;i<ans.size();i++){
-	        arr[i]=ans[i];
+	    int i=k;
+	    int j=k+1;
+	    while(i<n && j<n){
+	        if(arr[j]!=0){swap(arr[j],arr[i]);
+	        i++;}j++;
 	    }
-	    for(int i=ans.size();i<n;i++){
-	        arr[i]=0;
-	    }
-	    
+	  
 	}
 };
 
